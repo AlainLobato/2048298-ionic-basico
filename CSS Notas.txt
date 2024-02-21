@@ -1,0 +1,241 @@
+Importacion de CSS a HTML (head):
+
+<link rel = "stylesheet" href = "ARCHIVO.css">
+
+FONTAWESOME PARA ICONOS EN CSS (IMPORTAR PRIMERO)
+
+Propiedades:
+
+opacity: opacidad de 0 a 1 del elemento
+overflow: se aplica si un elemento sale del background: 
+
+- hidden: Oculta lo que salga del background
+- visible: No muestra diferencia
+- scroll: Completa el cuadro para que no este fuera del background
+
+cursor: pointer; Nos crea la mano si ponemos el mouse encima
+
+outline: borde fuera del borde
+
+max-width: Selecciona el ancho maximo
+
+rotate: xdeg; (rota un objeto x grados)
+
+
+SELECTORES:
+
+.: Para clases
+#: Para id
+*: Para todo nuestro codigo (solo propiedades no definidas)
+
+
+Podemos juntar etiquetas con clases:
+
+- p.titulo: todas las etiquetas p con clase titulo
+- div h1, div h2: todos los div con hijos h1 y h2
+
+
+Comentarios: /* ... */
+
+
+COLOR:
+
+- Hexagesimal: 0 es negro y f es blanco, usando 3 digitos el primero
+representa el rojo (#f00), el segundo verde (#0f0) y el tercero el 
+azul (#00f). Si se usan 6 digitos, es igual pero cada dos digitos
+
+- RGB: usamos rgb(x, y, z); le indicamos 3 valores del 0 al 255
+
+- Transparencia: rgba(0,0,0,1); el cuarto valor es para porcentaje de 0 a 1
+
+
+
+
+BORDER:
+
+- Le indicamos grosor, color y estilo: 5px black solid
+
+Otros tipos de estilo:
+
+- dotted
+- dashed
+- solid
+- double
+- groove
+- ridge
+- inset
+- outset
+- none
+- hidden
+
+border-style: Solo el estilo
+border-color: Solo el color
+border-radius: Para redondear el borde
+border-width: Ancho del borde
+
+
+TAMAÑOS UNIDADES:
+
+1px: pixeles
+1cm: centimetro
+1mm: milimetro
+1in: pulgada
+1pt: punto
+1pc: piccas
+1em: tamaño de la fuente del elemento
+1rem: tamaño de la fuente del elemento raiz (16px)
+100% todo el espacio posible (ajustable)
+
+
+BACKGROUND:
+
+background-color: da el color de fondo
+background-image: url("image.png"); da imagen a un fondo
+background-size: para redimensionar el fondo de imagen:
+
+- auto: se muestra el tamaño original de la imagen
+- cover: cubre el tamaño completo de la imagen (se adapta)
+- Xpx Ypx: darle tamaño nosotros
+
+background-repeat: Repeticion de la imagen
+
+- no repeat: no se repite 
+- repeat-x: se repite horizontal
+- repeat-y: se repite vertical
+
+background-position: indicar donde pondremos la imagen en el fondo (si se repite)
+el primer valor es el eje x y el segundo el y:
+
+- left, right, center
+- top, center, bottom
+
+background: todas las propiedades anteriores:
+color, url, repeticion y posicion (excepto tamaño)
+
+
+MARGIN (espacio fuera del elemento):
+
+margin: top right bottom left (size)
+si le damos uno es en todos los puntos
+
+
+PADDING(espacio dentro del elemento):
+
+padding: top right bottom left (size)
+si le damos uno es en todos los puntos
+
+
+TEXTO:
+
+text-aling: mueve los textos
+
+- center: centra el texto
+- justify: acomoda el texto para que abarque todo el ancho de la linea
+- right: mueve el texto a la derecha
+
+text-decoration: decora el texto
+
+- underline: subrraya
+- line-through: tacha
+- overline: linea arriba del texto
+- none: Para quitar de los links lo azul
+
+font-family: estilo de fuente (PODEMOS USAR GOOGLE FONT)
+
+
+ESTILO DE LINKS (pueden usarse en todos los elementos):
+
+ORDEN JERARQUICO: 
+
+a:link -> Cuando el link aun no se ha visitado
+a:visited -> Cuando el link ya fue visitado
+a:hover -> Si se le pone encima el cursor
+a:active -> Cuando se selecciona el link
+a:focus -> Si se selecciona con el tab
+
+
+LISTAS:
+
+list-style-type: none; Desaparece los puntos de una ul
+
+
+TABLAS:
+
+border-collapse: collapse -> Desaparece el espacio por fuera de los bordes
+
+tr:nth-child(odd/even): Selecciona los pares o impares 
+
+
+DISPLAY:
+
+display: toda la pantalla
+
+- block: acapara toda la linea
+- inline: acapara solo lo que el elemento necesita
+- inline-block: Podemos usar width y height
+- flex: posiciona los elementos uno al lado de otro
+(Usando flex-wrap: wrap; si nuestros elementos ya no caben en un ancho de un container, los ajusta)
+
+
+POSITION:
+
+position: selecciona la referencia a donde fijarse
+
+- static: fija el elemento siguiendo el flujo (predeterminada)
+- relative: fija la posicion en el documento, sin embargo podemos moverlo (si usamos top, no sirve bottom, igual con left y right)
+- absolute: "flota" en el flujo, para moverlo respecto a un container ocupamos que este tenga un position
+- fixed: posicion respecto a lo que vemos en el explorador (se fija)
+- sticky: mezcla entre relative y fixed, podemos poner un elemento abajo y en cuanto llegamos a ese punto, dependiendo del top que le pongamos, se fija a partir de ahi (el fixed se fija en todo momento, este solo cuando se llega a ese elemento)
+
+ORDEN DE APILAMIENTO:
+
+1.- z-index (numeros positivos)
+2.- Elementos con position
+3.- Elementos sin position
+4.- z-index (numeros negativos)
+
+float: para flotar algun elemento
+
+- right: justifica todo lo que tenga seleccionado a la derecha
+- left: justifica todo lo que tenga seleccionado a la izquierda
+
+
+CENTRAR UN ELEMENTO:
+
+padding: 50px 0
+text-align: center
+width: 200px
+margin: 0 auto
+
+
+SOMBRA: 
+
+text-shadow: sombra en un texto (right bottom difuminado size y color)
+box-shadow: lo mismo pero con un objeto (right bottom difuminado size y color)
+
+
+TRANSITION: propiedades de css animadas
+
+transition: box-shadow 0.3s ease; (el primer atributo es la propiedad
+que se animara, tambien podemos usar all)
+<property><duration><timing-function><delay>
+
+- ease
+- ease-in
+- ease-out
+- ease-in-out
+- linear
+
+
+VARIABLES EN CSS:
+
+Podemos guardar datos (colores, por ejemplo) y asi facilitar los
+cambios
+
+:root {
+	--nombre-var: #e0e0e0
+}
+
+Uso: var(--nombre-var)
+
+

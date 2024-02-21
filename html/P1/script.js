@@ -1,18 +1,23 @@
-var text = document.getElementById("input");
-var txt = "";
+var montox = 0;
+var articulo = '';
 
-Save = () => {
-	txt = text.value;
-	console.log(txt);
+function Agregar() {
+	ticket = document.querySelector("#ticket");
+	articulo = document.querySelector("#Art").value;
+	monto = document.querySelector("#Mnt").value;
+	
+	var p = document.createElement("p");
+	p.innerHTML = articulo + "---------- $" + monto;
+
+	
+	ticket.appendChild(p);
+	limpiar();
 }
 
-Delete = () => {
-	txt = text.value;
-	txt = "";
-}
+function limpiar(){
+	articulo = document.querySelector("#Art");
+	monto = document.querySelector("#Mnt");
 
-NewClass = () => {
-	var change = document.getElementById("body");
-	change.classList.toggle("change")
+	articulo.value = "";
+	monto.value = "";
 }
-
